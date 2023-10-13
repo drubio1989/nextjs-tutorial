@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useEffect } from "react"
 import { useQuery } from '@tanstack/react-query'
 import PromptCard from "./PromptCard";
 
@@ -33,6 +32,16 @@ function Feed() {
 
   return (
     <section className='feed'>
+      <form className='relative w-full flex-center'>
+        <input
+          type='text'
+          placeholder='Search for a tag or a username'
+          value={''}
+          onChange={{}}
+          required
+          className='search_input peer'
+        />
+      </form>
       <PromptCardList data={data} handleTagClick={{}} />
     </section>
   )
