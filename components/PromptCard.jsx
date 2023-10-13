@@ -6,19 +6,20 @@ import { useSession } from "next-auth/react";
 import { useRouter, usePathname } from 'next/navigation'
 
 const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
-  console.log(post)
-  // const [copied, setCopied] = useState('')
-  // const handleCopy = () => {
-  //   setCopied(post.prompt);
-  //   navigator.clipboard.writeText(post.prompt);
-  //   setTimeout(() => setCopied(""), 3000)
-  // }
+
+  const [copied, setCopied] = useState('')
+  const handleCopy = () => {
+    console.log('wtf')
+    setCopied(post.prompt);
+    navigator.clipboard.writeText(post.prompt);
+    setTimeout(() => setCopied(""), 3000)
+  }
 
   return (
     <div className="prompt_card">
 
-      {/* <div className='flex justify-between items-start gap-5'>
-        <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
+      <div className='flex justify-between items-start gap-5'>
+        {/* <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
           <Image 
             src={post.creator.image} 
             alt='user_image' 
@@ -32,7 +33,7 @@ const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
             </h3>
             <p className="font-inter text-sm text-gray-500">{post.creator.email}</p>
           </div>
-        </div>
+        </div> */}
        
         <div>  
           <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
@@ -60,7 +61,7 @@ const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
         onClick={() => handleTagClick && handleTagClick(post.tag)}
       >
         #{post.tag}
-      </p> */}
+      </p>
     </div>
   )
 }
