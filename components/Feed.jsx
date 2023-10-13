@@ -2,8 +2,10 @@
 
 import { useQuery } from '@tanstack/react-query'
 import PromptCard from "./PromptCard";
+import { useRouter, usePathname } from 'next/navigation'
 
 const PromptCardList = ({ data, handleTagClick }) => {
+  const pathName = usePathname();
 
   return (
     <div className="mt-16 prompt_layout">
